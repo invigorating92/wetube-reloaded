@@ -1,0 +1,8 @@
+extends base.pug
+
+block content
+    h1=video.title
+    h2
+        a(href=`${video.id}/edit`) Edit Video
+
+    h3 Total #{video.views} #{video.views === 1 ? "view" : "views"}
