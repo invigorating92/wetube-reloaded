@@ -1,6 +1,10 @@
 extends base.pug
 
 block content
+    if errorMessage
+        div #{errorMessage}
     form(method="POST")
-        input(name="title", required, placeholder="Input Title")
+        input(name="title", required, placeholder="Title", maxlength=20)
+        input(name="description", required, placeholder="Description", maxlength=80)
+        input(name="hashtags", required, placeholder="Hashtags, separated by comma")
         input(type="submit" value="Save!")

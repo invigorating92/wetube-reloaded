@@ -1,22 +1,11 @@
 extends base.pug
 include mixins/video
+include mixins/hashtags
 
 block content
     main
-    nav
-        ul 
-            if fakeUser.loggedIn
-                li 
-                    a(href="/logout") Log Out
-                    h3=fakeUser.username 
-            else 
-                li 
-                    a(href="/login") Log In
-        div 
-            a(href="/video/upload") Video Upload
-        
-    each x in videos 
-        +video(x)
-    else
-        li Sorry.
-    
+        div  
+            each x in videos 
+                +video(x)
+            else
+                li Sorry.

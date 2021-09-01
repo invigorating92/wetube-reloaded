@@ -1,5 +1,10 @@
 extends base.pug
 
 block content
-    main
-        h1 User Login!
+    span #{errorMessage}
+    form(method="post")
+        input(name="username",type="text", placeholder="UserName", required)         
+        input(name="password",type="password", placeholder="Password", required) 
+        input(type="submit", value="Login")
+    div Don't you have an account? 
+        a(href="/join") Create Account Now &rarr;

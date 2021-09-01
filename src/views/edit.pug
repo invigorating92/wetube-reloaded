@@ -3,5 +3,7 @@ extends base.pug
 block content
     h4 Change Title of Video
     form(method="POST")
-        input(name="potato" type="text", placeholder="rename the title", required, value=video.title)
+        input(name="title" type="text", placeholder="Rename the title", required, value=video.title, maxlength=20)
+        input(name="description" type="text", placeholder="Revise the description", required, value=video.description, maxlength=80)
+        input(name="hashtags" type="text", placeholder="Revise the hashtags", required, value=video.hashtags.join())
         input(name="submit" type="submit", value="save")

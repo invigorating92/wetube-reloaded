@@ -1,8 +1,18 @@
 extends base.pug
+include mixins/hashtags
 
 block content
     h1=video.title
     h2
-        a(href=`${video.id}/edit`) Edit Video
-
+        nav
+            ul 
+                li
+                    a(href=`${video.id}/edit`) Edit Video
+                li
+                    a(href=`${video.id}/delete`) Delete Video
+    p=video.description
+    //- small=video.createdAt
+    ul
+        each hashtag in video.hashtags
+            +hashtags(hashtag)
     h3 Total #{video.views} #{video.views === 1 ? "view" : "views"}

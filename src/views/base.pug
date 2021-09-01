@@ -1,6 +1,25 @@
 html(lang="ko")
     include partials/head.pug
     body
-        h1 #{pageTitle}
-        block content
-        include partials/footer.pug
+        main
+            h1 #{pageTitle}
+            nav
+                ul 
+                    li                 
+                        a(href="/") HOME
+                    li 
+                        a(href="/video/upload") Video_Upload
+                    li 
+                        a(href="/search") Video_Search
+                    if !loggedIn
+                        li 
+                            a(href="/login") Login
+                        li 
+                            a(href="/join") Join
+                    else 
+                        li 
+                            a(href="/logout") Log Out
+                        li 
+                            a(href="/my-profile") #{loggedInUser.name}'s profile
+            block content
+            include partials/footer.pug
